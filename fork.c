@@ -14,9 +14,11 @@ int main(){
 	} 
 	else if( pid == 0 ){
 		printf("Estás en el proceso hijo... \n");
+		printf("El id del hijo es: %d, y mi proceso padre es: %d\n\n", getpid(), getppid());
 	}else{
 		wait(&pid);
 		printf("Estás en el proceso padre... \n");
+		printf("El id del padre es: %d\n", getpid());
 	}
 
 	return 0;
